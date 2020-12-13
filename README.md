@@ -3,7 +3,7 @@ Say fuck you to everyone who is verified on Twitter!
 
 ### What is this?
 I wanted to learn a little bit about the Twitter API but I got really side tracked and came up with this idea.
-Borrowed idea from (@fckeveryword)[https://twitter.com/fckeveryword/] on twitter.
+Borrowed idea from [@fckeveryword](https://twitter.com/fckeveryword/) on twitter.
 
 ### Are you jealous of other people who are verified?
 I don't use Twitter enough to care...
