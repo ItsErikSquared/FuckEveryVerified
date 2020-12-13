@@ -59,7 +59,6 @@ function getAccounts() {
       console.error(error)
     }
     var body = JSON.parse(response.body)
-    console.log(body)
     // get all the users that were returned, make sure they are verified, then turn the array into just their names, then sent over to writeIfNotExists
     writeIfNotExists(body.users.filter(user => user.verified).map(user => user.screen_name))
     cursor = body.next_cursor
