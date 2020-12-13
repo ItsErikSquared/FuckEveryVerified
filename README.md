@@ -13,8 +13,8 @@ We pull this list from Twitter's following page.
 
 First, we have to make a list of everyone.
 This is the `get.js` javascript file (run by typing `node get` in the console).
-On Twitter, if you are verified you are most likely followed by Twitter's (@verified)[https://twitter.com/verified] account.
-We grab a 'page' of names that are followed by (@verified)[https://twitter.com/verified] in increments of 200, every 60 seconds due to ratelimits of a max of 200 users/request and 15 requests/15 minutes.
+On Twitter, if you are verified you are most likely followed by Twitter's [@verified](https://twitter.com/verified) account.
+We grab a 'page' of names that are followed by [verified](https://twitter.com/verified) in increments of 200, every 60 seconds due to ratelimits of a max of 200 users/request and 15 requests/15 minutes.
 Then it stores a 'cursor' which acts like a book marker that tells us what the next request should start from or 'what page we are on'.
 The `get.js` file also makes two files;
  - The `get` file - a list of all screen names (aka the handles).
