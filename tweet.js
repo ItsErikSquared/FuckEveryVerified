@@ -65,7 +65,7 @@ function get() {
 
   var skipNames = getSkipNames()
   if (skipNames > 0) {
-    return skipNames[Math.floor(Math.random() * skipNames)]
+    return skipNames[Math.floor(Math.random() * skipNames.length)]
   }
 
   var gotten = fs.readFileSync(getFile).toString().split('\n')
