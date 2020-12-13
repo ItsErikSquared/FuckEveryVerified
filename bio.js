@@ -5,8 +5,8 @@ const getFile = './get'
 const fuckedFile = './fucked'
 
 function updateBio() {
-  var get = fs.readFileSync(getFile).toString().split('\n').length
-  var fucked = fs.readFileSync(fuckedFile).toString().split('\n').length
+  var get = fs.readFileSync(getFile).toString().split('\n').length - 1
+  var fucked = fs.readFileSync(fuckedFile).toString().split('\n').length - 1
   client.post('account/update_profile', {
     description: `Fuck every @verified.\nBy @ItsErikSquared.\n\nImagine being verified...\nThis is all fun and games I swear :) (mostly)\nList Size: ${get}\nFucked: ${fucked}`
   }, (error, tweet, response) => {
