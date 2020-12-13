@@ -78,7 +78,10 @@ function get() {
 function post(name) {
   if (name !== null) {
     client.post('statuses/update', { status: `fuck @${name}` }, (error, tweet, response) => {
-      if (error) throw error
+      if (error) {
+        console.log('Could not post.')
+        console.error(error)
+      }
       console.log(`New Name Fucked: ${name}`)
       add(name)
     })

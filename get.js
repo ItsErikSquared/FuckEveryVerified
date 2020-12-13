@@ -54,7 +54,10 @@ function writeIfNotExists(names) {
 // Get accounts, write them to a list
 function getAccounts() {
   client.get('friends/list.json', { screen_name: 'verified', count: 200, cursor }, (error, tweets, response) => {
-    if (error) throw error
+    if (error) {
+      console.log('Could not get list.')
+      console.error(error)
+    }
     var body = JSON.parse(response.body)
     console.log(body)
     // get all the users that were returned, make sure they are verified, then turn the array into just their names, then sent over to writeIfNotExists
