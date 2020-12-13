@@ -47,7 +47,7 @@ function writeIfNotExists(names) {
       console.log(`New Name Added: ${name}`)
     }
   })
-  console.log(`Total Names: ${current_list.split('\n') + names.length}`)
+  console.log(`Total Names: ${current_list.split('\n').length + names.length}`)
   process.stdout.write(msg)
 }
 
