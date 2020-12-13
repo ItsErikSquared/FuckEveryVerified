@@ -8,6 +8,8 @@ const getFile = './get'
 const fuckedFile = './fucked'
 //Timer File (stores the last_post)
 const timerFile = './timer'
+//Skip Ahead File
+const skipFile = './skip'
 
 //Msg displaying eta
 const msg = 'Time till next status: '
@@ -43,9 +45,27 @@ function add(name) {
   console.log('Total Fucked: ' + fs.readFileSync(fuckedFile).toString().split('\n').length)
 }
 
+//Find all names that we can skip ahead to
+function getSkipNames() {
+  if (!fs.existsSync(skipFile)) {
+    fs.writeFileSync(skipFile, '')
+  }
+
+  var gotten = fs.readFileSync(skipFile).toString().split('\n')
+  var fucked = fs.readFileSync(fuckedFile).toString().split('\n')
+  return gotten.filter(name => !fucked.includes(name))
+}
+
+//Try to randomly get a name that isn't in the fucked list
+//If there are names that we can skip ahead to, do it
 function get() {
   if (!fs.existsSync(fuckedFile)) {
     fs.writeFileSync(fuckedFile, '')
+  }
+
+  var skipNames = getSkipNames()
+  if (skipNames > 0) {
+    return skipNames[Math.floor(Math.random() * skipNames)]
   }
 
   var gotten = fs.readFileSync(getFile).toString().split('\n')
