@@ -1,6 +1,5 @@
 const client = require('./client')
 const fs = require('fs')
-const { timeLog } = require('console')
 
 //Get File (gen by get.js)
 const getFile = './get'
@@ -40,7 +39,7 @@ function lstimer() {
 function add(name) {
   fs.appendFileSync(fuckedFile, name)
   console.log('New Name Added: ' + name)
-  console.log('Total Fucked: ' + fs.readFileSync(fuckedFile).toString().split('\n').size())
+  console.log('Total Fucked: ' + fs.readFileSync(fuckedFile).toString().split('\n').length)
 }
 
 function get() {
@@ -49,14 +48,10 @@ function get() {
   }
 
   var gotten = fs.readFileSync(getFile).toString().split('\n')
-  console.log('gotten ' + gotten.length)
   var fucked = fs.readFileSync(fuckedFile).toString().split('\n')
-  console.log('fucked ' + fucked.length)
   var names = gotten.filter(name => !fucked.includes(name))
-  console.log('names ' + names.length)
 
-  console.log(names[Math.floor(Math.random() * names.length)])
-  return 'ItsErikSquared'
+  return names[Math.floor(Math.random() * names.length)]
 }
 
 function post(name) {
@@ -72,14 +67,14 @@ function post(name) {
     console.log('Name not found! Trying again in ' + post_every + 'seconds...')
   }
 
-  last_post = Date.now() + (post_every * 1000)
+  last_post = Date.now()
   lstimer()
 }
 
 lstimer()
 process.stdout.write(msg)
 setInterval(() => {
-  var timer = Math.floor(((last_post - Date.now()) + (post_every * 1000)) / 1000)
+  var timer = Math.floor(((last_post + (post_every * 1000)) - Date.now()) / 1000)
   if (timer < 1) {
     post(get())
   } else {
