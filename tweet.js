@@ -1,5 +1,6 @@
-const client = require('./client')
+const client = require('./client.js')
 const fs = require('fs')
+const bio = require('./bio.js')
 
 //Get File (gen by get.js)
 const getFile = './get'
@@ -67,6 +68,7 @@ function post(name) {
     console.log('Name not found! Trying again in ' + post_every + 'seconds...')
   }
 
+  bio.updateBio()
   last_post = Date.now()
   lstimer()
 }
