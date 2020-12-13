@@ -37,7 +37,7 @@ function lstimer() {
 }
 
 function add(name) {
-  fs.appendFileSync(fuckedFile, name)
+  fs.appendFileSync(fuckedFile, name + "\n")
   console.log('New Name Added: ' + name)
   console.log('Total Fucked: ' + fs.readFileSync(fuckedFile).toString().split('\n').length)
 }
