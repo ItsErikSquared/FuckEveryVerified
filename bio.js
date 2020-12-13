@@ -14,11 +14,11 @@ function updateBio() {
       console.error(error)
     }
     var following = JSON.parse(response.body).friends_count
-    var fpercent = (fucked / following).toFixed(4)
-    var gpercent = (get / following).toFixed(4)
+    var fpercent = (fucked / following).toFixed(3)
+    var gpercent = (get / following).toFixed(3)
 
     client.post('account/update_profile', {
-      description: `Fuck every @verified.\nBy @ItsErikSquared.\n\nImagine being verified...\nThis is all fun and games I swear :) (mostly)\nList Size: ${get} (${gpercent}%)\nFucked: ${fucked} (${fpercent}%)`
+      description: `Fuck every @verified by @ItsErikSquared\n\nImagine being verified...\nThis is all fun and games I swear :) (mostly)\nList Size: ${get} (${gpercent}%)\nFucked: ${fucked} (${fpercent}%)`
     }, (error, tweet, response) => {
       if (error) {
         console.log('Could not update bio.')
