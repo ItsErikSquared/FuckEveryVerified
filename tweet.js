@@ -51,6 +51,7 @@ function getSkipNames() {
     fs.writeFileSync(skipFile, '')
   }
 
+
   var gotten = fs.readFileSync(skipFile).toString().split('\n')
   var fucked = fs.readFileSync(fuckedFile).toString().split('\n')
   return gotten.filter(name => !fucked.includes(name))
@@ -64,7 +65,7 @@ function get() {
   }
 
   var skipNames = getSkipNames()
-  if (skipNames > 0) {
+  if (skipNames.length > 0) {
     return skipNames[Math.floor(Math.random() * skipNames.length)]
   }
 
