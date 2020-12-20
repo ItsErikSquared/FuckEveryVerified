@@ -14,8 +14,8 @@ function updateBio() {
       console.error(error)
     }
     var following = JSON.parse(response.body).friends_count
-    var fpercent = ((fucked / following) * 100).toFixed(3)
-    var gpercent = ((get / following) * 100).toFixed(3)
+    var fpercent = ((fucked / following) * 100).toFixed(1)
+    var gpercent = ((get / following) * 100).toFixed(1)
 
     client.post('account/update_profile', {
       description: `Fuck every @verified by @ItsErikSquared\n\nImagine being verified...\nThis is all fun and games I swear :) (mostly)\nList Size: ${get} (${gpercent}%)\nFucked: ${fucked} (${fpercent}%)`
