@@ -18,7 +18,7 @@ function updateBio() {
     var gpercent = ((get / following) * 100).toFixed(1)
 
     client.post('account/update_profile', {
-      description: `Fuck every @verified by @ItsErikSquared\n(also people who should be verified)\nImagine being verified...\nThis is all fun and games I swear :) (mostly)\nFucked: ${fucked} (${fpercent}%)`
+      description: `Fuck every @verified by @ItsErikSquared\nNow w/ people who should be verified!\n\nThis is all fun and games I swear :) (mostly)\nFucked: ${fucked} (${fpercent}%)`
     }, (error, tweet, response) => {
       if (error) {
         console.log('Could not update bio.')
