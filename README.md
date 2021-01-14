@@ -1,6 +1,10 @@
 # Fuck Every Verified
 Say fuck you to everyone who is verified on Twitter!
 
+> My bot got banned on twitter.
+> People reported it but didn't ever say anything bad publicly to my bot.
+> He will be missed (I did appeal but doubt that it will come back w/ good news).
+
 ### What is this?
 I wanted to learn a little bit about the Twitter API but I got really side tracked and came up with this idea.
 Borrowed idea from [@fckeveryword](https://twitter.com/fckeveryword/) on twitter.
